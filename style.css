@@ -1,0 +1,130 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url('Survival1.17.webp'); /* Add your background image */
+    background-size: cover;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    background-size: cover;
+    filter: blur(4px);
+}
+
+.inventory-container {
+    display: flex;
+    flex-direction: column;
+    width: 440px;
+    align-items: flex-start;
+    font-family: sans-serif;
+    color: white;
+    background-color: rgb(215, 215, 215);
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    border: 4px solid #333;
+    border-top-color: #eee;
+    border-left-color: #eee;
+    border-bottom-color: #666;
+    border-right-color: #666
+}
+
+.crafting-area {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+    margin-bottom: 20px;
+    width: 140px;
+    grid-auto-flow: column;
+}
+
+.crafting-area .slot:last-child {
+    grid-column: 4;
+    grid-row: 2;
+    margin-left: 25px;
+}
+
+.main-inventory {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 5px;
+    margin-bottom: 20px;
+    width: 440px;
+    grid-auto-flow: row;
+}
+
+.hotbar {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 5px;
+    width: 440px; 
+    grid-auto-flow: row;
+}
+
+.slot {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #333;
+    background-color: #8b8b8b;
+    position: relative;
+}
+
+.slot::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-bottom: none;
+    border-right: none;
+    z-index: 1;
+}
+
+.slot::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    border-top: none;
+    border-left: none;
+}
+
+.item {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.held-item {
+    width: 40px;
+    height: 40px;
+    /* pointer-events: none; */
+}
+
+.quantity {
+    position: absolute;
+    bottom: 0px;
+    right: 2px;
+    font-size: 12px;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
